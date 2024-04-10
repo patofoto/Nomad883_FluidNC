@@ -133,9 +133,6 @@ probe:
 # spindle PWM signal
 PWM:
   pwm_hz: 5000
-  # on EXP1 IO15 connector.
-  # note IO15 will give some short pulses on boot, which may activate spindle
-  # use IO17 on EXP1 to avoid
   output_pin: gpio.17:high
   s0_with_disable: true
   tool_num: 0
