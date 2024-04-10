@@ -1,0 +1,147 @@
+board: MKS TinyBee V1.0_001
+name: Nomad883 Classic
+meta: (04.10.2024) by Patofoto
+
+kinematics:
+  Cartesian:
+
+i2so:
+  bck_pin: gpio.25
+  data_pin: gpio.27
+  ws_pin: gpio.26
+
+spi:
+  miso_pin: gpio.19
+  mosi_pin: gpio.23
+  sck_pin: gpio.18
+
+sdcard:
+  cs_pin: gpio.5
+  # uses TH2 IO34 active low - MAKE SURE jumper J2 is set to SDDET!!!
+  card_detect_pin: gpio.34:low
+
+stepping:
+  engine: I2S_STATIC
+  idle_ms: 255
+  pulse_us: 4
+  dir_delay_us: 1
+  disable_delay_us: 2
+
+
+axes:
+  x:
+    # T18 pulley (88.889)
+    steps_per_mm: 177.780
+    max_rate_mm_per_min: 3000.000
+    acceleration_mm_per_sec2: 300.000
+    max_travel_mm: 450.00
+    soft_limits: false
+    homing:
+      cycle: 2
+      positive_direction: true
+      mpos_mm: 425.000
+      feed_mm_per_min: 1000.000
+      seek_mm_per_min: 2000.000
+      settle_ms: 500
+      seek_scaler: 1.100
+      feed_scaler: 1.100
+
+    motor0:
+      limit_pos_pin: gpio.33:low:pu
+      hard_limits: true
+      pulloff_mm: 4.000
+      stepstick:
+        step_pin: I2SO.1
+        direction_pin: I2SO.2
+        disable_pin: I2SO.0  
+
+
+  y:
+    # T18 pulley (88.889) 
+    steps_per_mm: 177.780
+    max_rate_mm_per_min: 3000.000
+    acceleration_mm_per_sec2: 270.000
+    max_travel_mm: 450.000
+    soft_limits: false
+    homing:
+      cycle: 3
+      positive_direction: true
+      mpos_mm: 425.000
+      feed_mm_per_min: 1000.000
+      seek_mm_per_min: 2000.000
+      settle_ms: 500
+      seek_scaler: 1.100
+      feed_scaler: 1.100
+
+    motor0:
+      limit_pos_pin: gpio.32:low:pu
+      hard_limits: true
+      pulloff_mm: 4.000
+      stepstick:
+        step_pin: I2SO.4
+        direction_pin: I2SO.5
+        disable_pin: I2SO.3
+
+
+  z:
+    # M8 lead screw with an 8:1 gear ratio (200)
+    steps_per_mm: 400.000 
+    max_rate_mm_per_min: 1270.000
+    acceleration_mm_per_sec2: 270.000
+    max_travel_mm: 200.000
+    soft_limits: false
+    homing:
+      cycle: 1
+      positive_direction: true
+      mpos_mm: 200.000
+      feed_mm_per_min: 500.000
+      seek_mm_per_min: 800.000
+      settle_ms: 500
+      seek_scaler: 1.100
+      feed_scaler: 1.100
+
+    motor0:
+      limit_pos_pin: gpio.22:low:pu
+      hard_limits: true
+      pulloff_mm: 3.000
+      stepstick:
+        step_pin: I2SO.7
+        direction_pin: I2SO.8:low
+        disable_pin: I2SO.6
+
+
+control:
+  #on TH1 connector
+  safety_door_pin: gpio.36:low
+  reset_pin: NO_PIN
+  feed_hold_pin: NO_PIN
+  cycle_start_pin: NO_PIN
+  macro0_pin: NO_PIN
+  macro1_pin: NO_PIN
+  macro2_pin: NO_PIN
+  macro3_pin: NO_PIN
+
+
+probe:
+  #on MT_DET connector
+  pin: gpio.35:low:pu
+  toolsetter_pin: NO_PIN
+  check_mode_start: true
+
+
+
+# spindle PWM signal
+PWM:
+  pwm_hz: 5000
+  # on EXP1 IO15 connector.
+  # note IO15 will give some short pulses on boot, which may activate spindle
+  # use IO17 on EXP1 to avoid
+  output_pin: gpio.17:high
+  s0_with_disable: true
+  tool_num: 0
+  spinup_ms: 4000
+  spindown_ms: 4000
+  speed_map: 0=0.000% 10000=100.000%
+
+start:
+  must_home: true
