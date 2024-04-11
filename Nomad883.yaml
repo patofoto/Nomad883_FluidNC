@@ -28,6 +28,20 @@ stepping:
   disable_delay_us: 2
 
 
+# uart1:
+#   txd_pin: gpio.26
+#   rxd_pin: gpio.4
+#   rts_pin: NO_PIN
+#   cts_pin: NO_PIN
+#   baud: 1000000
+#   mode: 8N1
+
+# uart_channel1:
+#   report_interval_ms: 75
+#   uart_num: 1
+
+
+
 axes:
   x:
     # T18 pulley (88.889)
