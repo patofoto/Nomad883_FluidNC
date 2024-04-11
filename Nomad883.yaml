@@ -29,8 +29,8 @@ stepping:
 
 
 # uart1:
-#   txd_pin: gpio.26
-#   rxd_pin: gpio.4
+#   txd_pin: gpio.12
+#   rxd_pin: gpio.14
 #   rts_pin: NO_PIN
 #   cts_pin: NO_PIN
 #   baud: 1000000
