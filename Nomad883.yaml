@@ -140,7 +140,7 @@ control:
 
 probe:
   #on MT_DET connector
-  pin: gpio.35:low:pu
+  pin: gpio.35:low
   toolsetter_pin: NO_PIN
   check_mode_start: true
 
@@ -156,5 +156,13 @@ PWM:
   spindown_ms: 4000
   speed_map: 0=0.000% 10000=100.000%
 
+
 start:
   must_home: true
+
+
+user_outputs:
+  #FAN_1
+  digital0_pin: i2so.19:low
+  #FAN_2
+  digital1_pin: i2so.20:high
