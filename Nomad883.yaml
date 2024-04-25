@@ -48,14 +48,14 @@ axes:
   x:
     # T18 pulley (88.889)
     steps_per_mm: 177.780
-    max_rate_mm_per_min: 3000.000
-    acceleration_mm_per_sec2: 300.000
-    max_travel_mm: 450.00
+    max_rate_mm_per_min: 2600.000
+    acceleration_mm_per_sec2: 270.000
+    max_travel_mm: 250.00
     soft_limits: false
     homing:
       cycle: 2
       positive_direction: true
-      mpos_mm: 425.000
+      mpos_mm: 250.000
       feed_mm_per_min: 1000.000
       seek_mm_per_min: 2000.000
       settle_ms: 500
@@ -75,14 +75,14 @@ axes:
   y:
     # T18 pulley (88.889) 
     steps_per_mm: 177.780
-    max_rate_mm_per_min: 3000.000
+    max_rate_mm_per_min: 2600.000
     acceleration_mm_per_sec2: 270.000
-    max_travel_mm: 450.000
+    max_travel_mm: 250.000
     soft_limits: false
     homing:
       cycle: 3
       positive_direction: true
-      mpos_mm: 425.000
+      mpos_mm: 250.000
       feed_mm_per_min: 1000.000
       seek_mm_per_min: 2000.000
       settle_ms: 500
@@ -104,12 +104,12 @@ axes:
     steps_per_mm: 400.000 
     max_rate_mm_per_min: 1270.000
     acceleration_mm_per_sec2: 270.000
-    max_travel_mm: 200.000
+    max_travel_mm: 100.000
     soft_limits: false
     homing:
       cycle: 1
       positive_direction: true
-      mpos_mm: 200.000
+      mpos_mm: 100.000
       feed_mm_per_min: 500.000
       seek_mm_per_min: 800.000
       settle_ms: 500
